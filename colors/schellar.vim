@@ -35,15 +35,15 @@ hi Exception       ctermfg=118               cterm=bold
 hi Float           ctermfg=0
 hi FoldColumn      ctermfg=67  ctermbg=16
 hi Folded          ctermfg=67  ctermbg=16
-hi Function        ctermfg=118
-hi Identifier      ctermfg=208               cterm=none
+hi Function        ctermfg=0
+hi Identifier      ctermfg=0                 cterm=bold
 hi Ignore          ctermfg=244 ctermbg=232
 hi IncSearch       ctermfg=193 ctermbg=16
 
 hi keyword         ctermfg=0                 cterm=bold
-hi Label           ctermfg=229               cterm=none
-hi Macro           ctermfg=193
-hi SpecialKey      ctermfg=81
+hi Label           ctermfg=0                 cterm=bold
+hi Macro           ctermfg=0
+hi SpecialKey      ctermfg=0
 
 hi MatchParen      ctermfg=233  ctermbg=208  cterm=bold
 hi ModeMsg         ctermfg=229
@@ -71,10 +71,10 @@ hi Special         ctermfg=0
 hi Statement       ctermfg=0                 cterm=bold
 hi StatusLine      ctermfg=238 ctermbg=253
 hi StatusLineNC    ctermfg=244 ctermbg=232
-hi StorageClass    ctermfg=208
-hi Structure       ctermfg=81
-hi Tag             ctermfg=161
-hi Title           ctermfg=166
+hi StorageClass    ctermfg=0
+hi Structure       ctermfg=0
+hi Tag             ctermfg=0
+hi Title           ctermfg=0                 cterm=bold
 hi Todo            ctermfg=231 ctermbg=0     cterm=bold
 
 hi Typedef         ctermfg=0
