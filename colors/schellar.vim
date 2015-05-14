@@ -6,8 +6,8 @@ endif
 
 let g:colors_name="schellar"
 
-hi Normal          ctermfg=0   ctermbg=230
-hi CursorLine                  ctermbg=234   cterm=none
+hi Normal          ctermfg=0   ctermbg=15
+hi CursorLine      ctermfg=255 ctermbg=12    cterm=none
 hi CursorLineNr    ctermfg=0                 cterm=none
 
 hi Boolean         ctermfg=0
@@ -29,9 +29,9 @@ hi DiffDelete      ctermfg=162 ctermbg=53
 hi DiffText                    ctermbg=102   cterm=bold
 
 hi Directory       ctermfg=0                 cterm=bold
-hi Error           ctermfg=219 ctermbg=89
-hi ErrorMsg        ctermfg=199 ctermbg=16    cterm=bold
-hi Exception       ctermfg=118               cterm=bold
+hi Error           ctermfg=15  ctermbg=0
+hi ErrorMsg        ctermfg=15  ctermbg=0     cterm=bold
+hi Exception       ctermfg=0                 cterm=bold
 hi Float           ctermfg=0
 hi FoldColumn      ctermfg=67  ctermbg=16
 hi Folded          ctermfg=67  ctermbg=16
@@ -51,7 +51,7 @@ hi MoreMsg         ctermfg=229
 hi Operator        ctermfg=161
 
 " complete menu
-hi Pmenu           ctermfg=0   ctermbg=229
+hi Pmenu           ctermfg=0   ctermbg=230
 hi PmenuSel        ctermfg=229 ctermbg=0
 hi PmenuSbar                   ctermbg=0
 hi PmenuThumb      ctermfg=81
@@ -81,9 +81,9 @@ hi Typedef         ctermfg=0
 hi Type            ctermfg=0                 cterm=none
 hi Underlined      ctermfg=244               cterm=underline
 
-hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
+hi VertSplit       ctermfg=0   ctermbg=15   cterm=bold
 hi VisualNOS                   ctermbg=238
-hi Visual                      ctermbg=235
+hi Visual                      ctermbg=14
 hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
 hi WildMenu        ctermfg=81  ctermbg=16
 
