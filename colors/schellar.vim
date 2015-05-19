@@ -32,10 +32,10 @@ hi Directory       ctermfg=0                 cterm=bold
 hi Error           ctermfg=15  ctermbg=0
 hi ErrorMsg        ctermfg=15  ctermbg=0     cterm=bold
 hi Exception       ctermfg=0                 cterm=bold
-hi Float           ctermfg=0
+hi Float           ctermfg=2
 hi FoldColumn      ctermfg=67  ctermbg=16
 hi Folded          ctermfg=67  ctermbg=16
-hi Function        ctermfg=0
+hi Function        ctermfg=2
 hi Identifier      ctermfg=0                 cterm=bold
 hi Ignore          ctermfg=244 ctermbg=232
 hi IncSearch       ctermfg=193 ctermbg=16
@@ -43,7 +43,7 @@ hi IncSearch       ctermfg=193 ctermbg=16
 hi keyword         ctermfg=0                 cterm=bold
 hi Label           ctermfg=0                 cterm=bold
 hi Macro           ctermfg=0
-hi SpecialKey      ctermfg=0
+hi SpecialKey      ctermfg=0                 cterm=none
 
 hi MatchParen      ctermfg=233  ctermbg=208  cterm=bold
 hi ModeMsg         ctermfg=229
@@ -57,7 +57,7 @@ hi PmenuSbar                   ctermbg=0
 hi PmenuThumb      ctermfg=81
 
 hi PreCondit       ctermfg=0                 cterm=bold
-hi PreProc         ctermfg=0
+hi PreProc         ctermfg=2
 hi Question        ctermfg=81
 hi Repeat          ctermfg=0                 cterm=bold
 hi Search          ctermfg=0   ctermbg=222   cterm=NONE
@@ -66,18 +66,18 @@ hi Search          ctermfg=0   ctermbg=222   cterm=NONE
 hi SignColumn      ctermfg=118 ctermbg=235
 hi SpecialChar     ctermfg=161               cterm=bold
 hi SpecialComment  ctermfg=245               cterm=bold
-hi Special         ctermfg=0
+hi Special         ctermfg=2
 
 hi Statement       ctermfg=0                 cterm=bold
 hi StatusLine      ctermfg=238 ctermbg=253
 hi StatusLineNC    ctermfg=244 ctermbg=232
-hi StorageClass    ctermfg=0
-hi Structure       ctermfg=0
-hi Tag             ctermfg=0
+hi StorageClass    ctermfg=2
+hi Structure       ctermfg=2
+hi Tag             ctermfg=2
 hi Title           ctermfg=0                 cterm=bold
 hi Todo            ctermfg=231 ctermbg=0     cterm=bold
 
-hi Typedef         ctermfg=0
+hi Typedef         ctermfg=2
 hi Type            ctermfg=0                 cterm=none
 hi Underlined      ctermfg=244               cterm=underline
 
@@ -91,13 +91,5 @@ hi CursorColumn                ctermbg=236
 hi ColorColumn                 ctermbg=236
 hi LineNr          ctermfg=248
 hi NonText         ctermfg=59
-
-hi SpecialKey      ctermfg=59
-
-" spell check
-hi SpellBad                     ctermbg=52
-hi SpellCap                     ctermbg=17
-hi SpellLocal                   ctermbg=17
-hi SpellRare       ctermfg=none ctermbg=none  cterm=reverse
 
 set background=light
