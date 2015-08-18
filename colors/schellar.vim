@@ -37,7 +37,6 @@ hi FoldColumn      ctermfg=67  ctermbg=16
 hi Folded          ctermfg=67  ctermbg=16
 hi Function        ctermfg=2
 hi Identifier      ctermfg=0               cterm=bold
-hi Ignore          ctermfg=244 ctermbg=232
 hi IncSearch       ctermfg=193 ctermbg=16
 
 hi keyword         ctermfg=0               cterm=bold
