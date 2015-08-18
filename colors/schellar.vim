@@ -88,7 +88,7 @@ hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
 hi WildMenu        ctermfg=81  ctermbg=16
 
 hi CursorColumn                ctermbg=236
-hi ColorColumn                 ctermbg=236
+hi ColorColumn                 ctermbg=7
 hi LineNr          ctermfg=248
 hi NonText         ctermfg=59
 
