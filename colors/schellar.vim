@@ -68,8 +68,8 @@ hi SpecialComment  ctermfg=245             cterm=bold
 hi Special         ctermfg=2
 
 hi Statement       ctermfg=0               cterm=bold
-hi StatusLine      ctermfg=238 ctermbg=253
-hi StatusLineNC    ctermfg=244 ctermbg=232
+hi StatusLine      ctermfg=11
+hi StatusLineNC    ctermfg=11
 hi StorageClass    ctermfg=2
 hi Structure       ctermfg=2
 hi Tag             ctermfg=2
