@@ -52,12 +52,12 @@ hi Operator        ctermfg=161
 " complete menu
 hi Pmenu           ctermfg=0   ctermbg=230
 hi PmenuSel        ctermfg=229 ctermbg=0
-hi PmenuSbar                   ctermbg=0
-hi PmenuThumb      ctermfg=81
+hi PmenuSbar                   ctermbg=7
+hi PmenuThumb                  ctermbg=0
 
 hi PreCondit       ctermfg=0               cterm=bold
-hi PreProc         ctermfg=2
-hi Question        ctermfg=81
+hi PreProc         ctermfg=0               cterm=bold
+hi Question        ctermfg=0               cterm=bold
 hi Repeat          ctermfg=0               cterm=bold
 hi Search          ctermfg=0   ctermbg=222 cterm=none
 
