@@ -23,14 +23,14 @@ hi Delimiter       ctermfg=241
 hi Comment         ctermfg=244
 
 " vimdiff
-hi DiffAdd         ctermfg=0   ctermbg=249
+hi DiffAdd         ctermfg=0   ctermbg=187
 hi DiffChange      ctermfg=0   ctermbg=15
 hi DiffDelete      ctermfg=0   ctermbg=15
 hi DiffText        ctermfg=0   ctermbg=229 cterm=none
 
 hi Directory       ctermfg=0               cterm=bold
-hi Error           ctermfg=15  ctermbg=0
-hi ErrorMsg        ctermfg=15  ctermbg=0   cterm=bold
+hi Error           ctermfg=0   ctermbg=15
+hi ErrorMsg        ctermfg=0   ctermbg=15  cterm=bold
 hi Exception       ctermfg=0               cterm=bold
 hi Float           ctermfg=2
 hi FoldColumn      ctermfg=67  ctermbg=16
@@ -83,7 +83,7 @@ hi Underlined      ctermfg=244             cterm=underline
 hi VertSplit       ctermfg=0   ctermbg=15  cterm=bold
 hi VisualNOS                   ctermbg=238
 hi Visual                      ctermbg=14
-hi WarningMsg      ctermfg=231 ctermbg=238 cterm=bold
+hi WarningMsg      ctermfg=0   ctermbg=15  cterm=bold
 hi WildMenu        ctermfg=81  ctermbg=16
 
 hi CursorColumn                ctermbg=236
