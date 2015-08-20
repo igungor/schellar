@@ -23,10 +23,10 @@ hi Delimiter       ctermfg=241
 hi Comment         ctermfg=244
 
 " vimdiff
-hi DiffAdd                     ctermbg=24
-hi DiffChange      ctermfg=181 ctermbg=239
-hi DiffDelete      ctermfg=162 ctermbg=53
-hi DiffText                    ctermbg=102 cterm=bold
+hi DiffAdd         ctermfg=0   ctermbg=249
+hi DiffChange      ctermfg=0   ctermbg=15
+hi DiffDelete      ctermfg=0   ctermbg=15
+hi DiffText        ctermfg=0   ctermbg=229 cterm=none
 
 hi Directory       ctermfg=0               cterm=bold
 hi Error           ctermfg=15  ctermbg=0
