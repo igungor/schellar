@@ -32,10 +32,10 @@ hi Directory       ctermfg=0               cterm=bold
 hi Error           ctermfg=0   ctermbg=15
 hi ErrorMsg        ctermfg=0   ctermbg=15  cterm=bold
 hi Exception       ctermfg=0               cterm=bold
-hi Float           ctermfg=2
+hi Float           ctermfg=0
 hi FoldColumn      ctermfg=67  ctermbg=16
 hi Folded          ctermfg=67  ctermbg=16
-hi Function        ctermfg=2
+hi Function        ctermfg=0
 hi Identifier      ctermfg=0               cterm=bold
 hi IncSearch       ctermfg=193 ctermbg=16
 
@@ -47,7 +47,7 @@ hi SpecialKey      ctermfg=0               cterm=none
 hi MatchParen      ctermfg=0   ctermbg=15  cterm=bold
 hi ModeMsg         ctermfg=229
 hi MoreMsg         ctermfg=229
-hi Operator        ctermfg=161
+hi Operator        ctermfg=0               cterm=bold
 
 " complete menu
 hi Pmenu           ctermfg=0   ctermbg=230
@@ -70,13 +70,13 @@ hi Special         ctermfg=2
 hi Statement       ctermfg=0               cterm=bold
 hi StatusLine      ctermfg=11
 hi StatusLineNC    ctermfg=11
-hi StorageClass    ctermfg=2
-hi Structure       ctermfg=2
-hi Tag             ctermfg=2
+hi StorageClass    ctermfg=0
+hi Structure       ctermfg=0
+hi Tag             ctermfg=0
 hi Title           ctermfg=0               cterm=bold
 hi Todo            ctermfg=231 ctermbg=0   cterm=bold
 
-hi Typedef         ctermfg=2
+hi Typedef         ctermfg=0
 hi Type            ctermfg=0               cterm=none
 hi Underlined      ctermfg=244             cterm=underline
 
