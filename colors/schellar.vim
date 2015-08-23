@@ -6,21 +6,83 @@ endif
 
 let g:colors_name="schellar"
 
+""""""""""""""""""""""""""""""""""""""""""""""""
+" Preliminary group names to highlight
+"
+" Comments are extracted from `:help group-name`
+""""""""""""""""""""""""""""""""""""""""""""""""
 hi Normal          ctermfg=0   ctermbg=15
+
+hi Comment         ctermfg=244
+" *Comment         any comment
+
+hi Constant        ctermfg=236
+" *Constant        any constant
+"  String	       a string constant: "this is a string"
+"  Character       a character constant: 'c', '\n'
+"  Number	       a number constant: 234, 0xff
+"  Boolean	       a boolean constant: TRUE, false
+"  Float		   a floating point constant: 2.3e10
+
+hi Identifier      ctermfg=0               cterm=bold
+" *Identifier      any variable name
+"  Function        function name (also: methods for classes)
+
+hi Statement       ctermfg=0               cterm=bold
+" *Statement       any statement
+"  Conditional     if, then, else, endif, switch, etc.
+"  Repeat          for, do, while, etc.
+"  Label           case, default, etc.
+"  Operator        "sizeof", "+", "*", etc.
+"  Keyword         any other keyword
+"  Exception       try, catch, throw
+
+hi PreProc         ctermfg=0               cterm=bold
+" *PreProc         generic Preprocessor
+"  Include         preprocessor #include
+"  Define          preprocessor #define
+"  Macro           same as Define
+"  PreCondit       preprocessor #if, #else, #endif, etc.
+
+hi Type            ctermfg=0               cterm=none
+" *Type            int, long, char, etc.
+"  StorageClass    static, register, volatile, etc.
+"  Structure       struct, union, enum, etc.
+"  Typedef         a typedef
+
+" TODO(ig): these were defined other than 0. test.
+" hi SpecialChar     ctermfg=161             cterm=bold
+" hi Delimiter       ctermfg=241
+hi Special         ctermfg=0               cterm=bold
+" *Special         any special symbol
+"  SpecialChar     special character in a constant
+"  Tag             you can use CTRL-] on this
+"  Delimiter       character that needs attention
+"  SpecialComment  special things inside a comment
+"  Debug           debugging statements
+
+hi Underlined      ctermfg=0               cterm=underline
+" *Underlined      text that stands out, HTML links
+
+hi Ignore          ctermfg=0   ctermbg=0   cterm=none
+" *Ignore          left blank, hidden  |hl-Ignore|
+
+hi Error           ctermfg=0   ctermbg=15
+" *Error           any erroneous construct
+
+hi Todo            ctermfg=231 ctermbg=0   cterm=bold
+" *Todo            anything that needs extra attention; mostly the
+"                  keywords TODO FIXME and XXX
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Extended highlighting
+"
+" Comments are extracted from `:help highlight-groups`
+" """"""""""""""""""""""""""""""""""""""""""""""""""""
 hi CursorLine      ctermfg=255 ctermbg=12  cterm=none
 hi CursorLineNr    ctermfg=0               cterm=none
 
-hi Boolean         ctermfg=0
-hi Character       ctermfg=0
-hi Number          ctermfg=0
-hi String          ctermfg=0
-hi Conditional     ctermfg=0               cterm=bold
-hi Constant        ctermfg=236             cterm=bold
 hi Cursor          ctermfg=16  ctermbg=253
-hi Debug           ctermfg=225             cterm=bold
-hi Define          ctermfg=81
-hi Delimiter       ctermfg=241
-hi Comment         ctermfg=244
 
 " vimdiff
 hi DiffAdd         ctermfg=0   ctermbg=187
@@ -29,25 +91,16 @@ hi DiffDelete      ctermfg=0   ctermbg=15
 hi DiffText        ctermfg=0   ctermbg=229 cterm=none
 
 hi Directory       ctermfg=0               cterm=bold
-hi Error           ctermfg=0   ctermbg=15
 hi ErrorMsg        ctermfg=0   ctermbg=15  cterm=bold
-hi Exception       ctermfg=0               cterm=bold
-hi Float           ctermfg=0
 hi FoldColumn      ctermfg=67  ctermbg=16
 hi Folded          ctermfg=67  ctermbg=16
-hi Function        ctermfg=0
-hi Identifier      ctermfg=0               cterm=bold
 hi IncSearch       ctermfg=193 ctermbg=16
 
-hi keyword         ctermfg=0               cterm=bold
-hi Label           ctermfg=0               cterm=bold
-hi Macro           ctermfg=0
 hi SpecialKey      ctermfg=0               cterm=none
 
 hi MatchParen      ctermfg=0   ctermbg=15  cterm=bold
 hi ModeMsg         ctermfg=229
 hi MoreMsg         ctermfg=229
-hi Operator        ctermfg=0               cterm=bold
 
 " complete menu
 hi Pmenu           ctermfg=0   ctermbg=230
@@ -55,30 +108,16 @@ hi PmenuSel        ctermfg=229 ctermbg=0
 hi PmenuSbar                   ctermbg=7
 hi PmenuThumb                  ctermbg=0
 
-hi PreCondit       ctermfg=0               cterm=bold
-hi PreProc         ctermfg=0               cterm=bold
 hi Question        ctermfg=0               cterm=bold
-hi Repeat          ctermfg=0               cterm=bold
 hi Search          ctermfg=0   ctermbg=222 cterm=none
 
 " marks column
 hi SignColumn      ctermfg=118 ctermbg=235
-hi SpecialChar     ctermfg=161             cterm=bold
 hi SpecialComment  ctermfg=245             cterm=bold
-hi Special         ctermfg=2
 
-hi Statement       ctermfg=0               cterm=bold
 hi StatusLine      ctermfg=11
 hi StatusLineNC    ctermfg=11
-hi StorageClass    ctermfg=0
-hi Structure       ctermfg=0
-hi Tag             ctermfg=0
 hi Title           ctermfg=0               cterm=bold
-hi Todo            ctermfg=231 ctermbg=0   cterm=bold
-
-hi Typedef         ctermfg=0
-hi Type            ctermfg=0               cterm=none
-hi Underlined      ctermfg=244             cterm=underline
 
 hi VertSplit       ctermfg=0   ctermbg=15  cterm=bold
 hi VisualNOS                   ctermbg=238
