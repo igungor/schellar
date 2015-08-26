@@ -171,25 +171,24 @@ hi SpecialKey      ctermfg=0               cterm=none
 "                  Generally: text that is displayed differently from what it
 "                  really is.
 
-" TODO(ig): Assign greys to spell highlight group.
-"
-" hi SpellBad
-"    SpellBad      Word that is not recognized by the spellchecker.
+" TODO(ig): assign proper colorcodes to spell group.
+hi SpellBad        ctermfg=0 ctermbg=15  cterm=italic
+"  SpellBad        Word that is not recognized by the spellchecker.
 "                  This will be combined with the highlighting used otherwise.
-"
-" hi SpellCap
-"    SpellCap      Word that should start with a capital.
+
+hi SpellCap        ctermfg=0 ctermbg=15  cterm=italic
+" SpellCap         Word that should start with a capital.
 "                  This will be combined with the highlighting used otherwise.
-"
-" hi SpellLocal
-"    SpellLocal    Word that is recognized by the spellchecker as one that is
-"                  used in another region.
-"                  This will be combined with the highlighting used otherwise.
-"
-" hi SpellRare
-"    SpellRare     Word that is recognized by the spellchecker as one that is
-"                  hardly ever used.
-"                  This will be combined with the highlighting used otherwise.
+
+hi SpellLocal      ctermfg=0 ctermbg=15  cterm=italic
+"  SpellLocal      Word that is recognized by the spellchecker as one that is
+"                  used in another region. This will be combined with the
+"                  highlighting used otherwise.
+
+hi SpellRare       ctermfg=0 ctermbg=15  cterm=italic
+"  SpellRare       Word that is recognized by the spellchecker as one that is
+"                  hardly ever used. This will be combined with the
+"                  highlighting used otherwise.
 
 hi StatusLine      ctermfg=11
 "  StatusLine      status line of current window
