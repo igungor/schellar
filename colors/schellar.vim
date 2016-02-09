@@ -45,7 +45,7 @@ hi PreProc         ctermfg=0               cterm=bold
 "  Macro           same as Define
 "  PreCondit       preprocessor #if, #else, #endif, etc.
 
-hi Type            ctermfg=0               cterm=none
+hi Type            ctermfg=0               cterm=bold
 " *Type            int, long, char, etc.
 "  StorageClass    static, register, volatile, etc.
 "  Structure       struct, union, enum, etc.
@@ -213,5 +213,8 @@ hi WarningMsg      ctermfg=0   ctermbg=15  cterm=bold
 
 hi WildMenu        ctermfg=81  ctermbg=16
 "  WildMenu        current match in 'wildmenu' completion
+
+""" C
+hi cPreCondit         ctermfg=0               cterm=bold
 
 set background=light
