@@ -1,23 +1,50 @@
 hi clear
-
 if exists("syntax_on")
     syntax reset
 endif
-
 let g:colors_name="schellar"
+
+let s:palette = {}
+if &background == "light"
+    let s:palette.fg        = [0 , "#000000"]
+    let s:palette.bg        = [15, "#080808"]
+    let s:palette.lightgrey = [244, "#080808"]
+else
+    let s:palette.fg        = [249, "#000000"]
+    let s:palette.bg        = [8, "#080808"]
+    let s:palette.lightgrey = [244, "#080808"]
+end
+
+" HL is a helper function to generate highlight commands based on cterm/gui
+" etc.
+function! s:HL(item, fgColor, bgColor, style, ...)
+    let target = 'cterm'
+    let pindex = 0
+    if has('gui_running')
+        let target = 'gui'
+        let pindex = 1
+    end
+
+    let command  = 'hi ' . a:item
+    let command .= ' ' . target . 'fg=' . a:fgColor[pindex]
+    let command .= ' ' . target . 'bg=' . a:bgColor[pindex]
+    let command .= ' ' . target . '=' . a:style
+
+    execute command
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""
 " Preliminary group names to highlight
 "
 " Comments are extracted from `:help group-name`
 """"""""""""""""""""""""""""""""""""""""""""""""
-hi Normal          ctermfg=0   ctermbg=15
+call s:HL('Normal', s:palette.fg, s:palette.bg , 'none')
 "  Normal          normal text
 
-hi Comment         ctermfg=244
+call s:HL('Comment', s:palette.lightgrey, s:palette.bg , 'none')
 " *Comment         any comment
 
-hi Constant        ctermfg=0
+call s:HL('Constant', s:palette.fg, s:palette.bg , 'none')
 " *Constant        any constant
 "  String          a string constant: "this is a string"
 "  Character       a character constant: 'c', '\n'
@@ -25,11 +52,11 @@ hi Constant        ctermfg=0
 "  Boolean         a boolean constant: TRUE, false
 "  Float           a floating point constant: 2.3e10
 
-hi Identifier      ctermfg=0               cterm=bold
+call s:HL('Identifier', s:palette.fg, s:palette.bg , 'bold')
 " *Identifier      any variable name
 "  Function        function name (also: methods for classes)
 
-hi Statement       ctermfg=0               cterm=bold
+call s:HL('Statement', s:palette.fg, s:palette.bg , 'bold')
 " *Statement       any statement
 "  Conditional     if, then, else, endif, switch, etc.
 "  Repeat          for, do, while, etc.
@@ -38,20 +65,20 @@ hi Statement       ctermfg=0               cterm=bold
 "  Keyword         any other keyword
 "  Exception       try, catch, throw
 
-hi PreProc         ctermfg=0               cterm=bold
+call s:HL('PreProc', s:palette.fg, s:palette.bg , 'bold')
 " *PreProc         generic Preprocessor
 "  Include         preprocessor #include
 "  Define          preprocessor #define
 "  Macro           same as Define
 "  PreCondit       preprocessor #if, #else, #endif, etc.
 
-hi Type            ctermfg=0               cterm=bold
+call s:HL('Type', s:palette.fg, s:palette.bg , 'bold')
 " *Type            int, long, char, etc.
 "  StorageClass    static, register, volatile, etc.
 "  Structure       struct, union, enum, etc.
 "  Typedef         a typedef
 
-hi Special         ctermfg=0               cterm=bold
+call s:HL('Special', s:palette.fg, s:palette.bg , 'bold')
 " *Special         any special symbol
 "  SpecialChar     special character in a constant
 "  Tag             you can use CTRL-] on this
@@ -59,13 +86,13 @@ hi Special         ctermfg=0               cterm=bold
 "  SpecialComment  special things inside a comment
 "  Debug           debugging statements
 
-hi Underlined      ctermfg=0               cterm=underline
+call s:HL('Underlined', s:palette.fg, s:palette.bg , 'underline')
 " *Underlined      text that stands out, HTML links
 
-hi Ignore          ctermfg=0   ctermbg=0   cterm=none
+call s:HL('Ignore', s:palette.fg, s:palette.fg , 'none')
 " *Ignore          left blank, hidden
 
-hi Error           ctermfg=0   ctermbg=15
+call s:HL('Error', s:palette.fg, s:palette.bg , 'none')
 " *Error           any erroneous construct
 
 hi Todo            ctermfg=15     ctermbg=244 cterm=bold
@@ -89,25 +116,25 @@ hi CursorColumn    ctermfg=0   ctermbg=236
 hi CursorLine      ctermfg=255 ctermbg=12  cterm=none
 "  CursorLine      the screen line that the cursor is in when 'cursorline' is set
 
-hi Directory       ctermfg=0               cterm=bold
+call s:HL('Directory', s:palette.fg, s:palette.bg , 'bold')
 "  Directory       directory names (and other special names in listings)
 
 hi DiffAdd         ctermfg=0   ctermbg=187
 "  DiffAdd         diff mode: Added line
-"
-hi DiffChange      ctermfg=0   ctermbg=15
+
+call s:HL('DiffChange', s:palette.fg, s:palette.bg , 'none')
 "  DiffChange      diff mode: Changed line
-"
-hi DiffDelete      ctermfg=0   ctermbg=15
+
+call s:HL('DiffDelete', s:palette.fg, s:palette.bg , 'none')
 "  DiffDelete      diff mode: Deleted line
-"
+
 hi DiffText        ctermfg=0   ctermbg=229 cterm=none
 "  DiffText        diff mode: Changed text within a changed line
-"
-hi ErrorMsg        ctermfg=0   ctermbg=15  cterm=bold
+
+call s:HL('ErrorMsg', s:palette.fg, s:palette.bg , 'bold')
 "  ErrorMsg        error messages on the command line
-"
-hi VertSplit       ctermfg=0   ctermbg=15  cterm=bold
+
+call s:HL('VertSplit', s:palette.fg, s:palette.bg , 'bold')
 "  VertSplit       the column separating vertically split windows
 
 hi Folded          ctermfg=67  ctermbg=16
@@ -126,10 +153,10 @@ hi LineNr          ctermfg=248
 "  LineNr          line number for ":number" and ":#" commands, and when 'number'
 "                  or 'relativenumber' option is set.
 
-hi CursorLineNr    ctermfg=0               cterm=none
+call s:HL('CursorLineNr', s:palette.fg, s:palette.bg , 'none')
 "  CursorLineNr    like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 
-hi MatchParen      ctermfg=0   ctermbg=15  cterm=bold
+call s:HL('MatchParen', s:palette.fg, s:palette.bg , 'bold')
 "  MatchParen      the character under the cursor or just before it, if it
 "                  is a paired bracket, and its match.
 
@@ -154,10 +181,10 @@ hi PmenuSel        ctermfg=229 ctermbg=0
 hi PmenuSbar                   ctermbg=7
 "  PmenuSbar       popup menu: scrollbar.
 
-hi PmenuThumb                  ctermbg=0
+call s:HL('MatchParen', s:palette.fg, s:palette.bg , 'none')
 "  PmenuThumb      popup menu: Thumb of the scrollbar.
 
-hi Question        ctermfg=0               cterm=bold
+call s:HL('Question', s:palette.fg, s:palette.bg , 'bold')
 "  Question        prompt and yes/no questions
 
 hi Search          ctermfg=0   ctermbg=222 cterm=none
@@ -165,27 +192,27 @@ hi Search          ctermfg=0   ctermbg=222 cterm=none
 "                  Also used for highlighting the current line in the quickfix
 "                  window and similar items that need to stand out.
 
-hi SpecialKey      ctermfg=0               cterm=none
+call s:HL('SpecialKey', s:palette.fg, s:palette.bg , 'none')
 "  SpecialKey      meta and special keys listed with ":map", also for text used
 "                  to show unprintable characters in the text, 'listchars'.
 "                  Generally: text that is displayed differently from what it
 "                  really is.
 
 " TODO(ig): assign proper colorcodes to spell group.
-hi SpellBad        ctermfg=0 ctermbg=15  cterm=italic
+call s:HL('SpellBad', s:palette.fg, s:palette.bg , 'italic')
 "  SpellBad        Word that is not recognized by the spellchecker.
 "                  This will be combined with the highlighting used otherwise.
 
-hi SpellCap        ctermfg=0 ctermbg=15  cterm=italic
+call s:HL('SpellCap', s:palette.fg, s:palette.bg , 'italic')
 " SpellCap         Word that should start with a capital.
 "                  This will be combined with the highlighting used otherwise.
 
-hi SpellLocal      ctermfg=0 ctermbg=15  cterm=italic
+call s:HL('SpellLocal', s:palette.fg, s:palette.bg , 'italic')
 "  SpellLocal      Word that is recognized by the spellchecker as one that is
 "                  used in another region. This will be combined with the
 "                  highlighting used otherwise.
 
-hi SpellRare       ctermfg=0 ctermbg=15  cterm=italic
+call s:HL('SpellRare', s:palette.fg, s:palette.bg , 'italic')
 "  SpellRare       Word that is recognized by the spellchecker as one that is
 "                  hardly ever used. This will be combined with the
 "                  highlighting used otherwise.
@@ -198,7 +225,7 @@ hi StatusLineNC    ctermfg=11
 "                  Note: if this is equal to "StatusLine" Vim will use "^^^" in
 "                  the status line of the current window.
 
-hi Title           ctermfg=0               cterm=bold
+call s:HL('Title', s:palette.fg, s:palette.bg , 'bold')
 "  Title           titles for output from ":set all", ":autocmd" etc.
 
 hi Visual          ctermfg=0   ctermbg=14
@@ -208,13 +235,11 @@ hi VisualNOS       ctermfg=0   ctermbg=238
 "  VisualNOS       Visual mode selection when vim is "Not Owning the Selection".
 "                  Only X11 Gui's gui-x11 and xterm-clipboard supports this.
 
-hi WarningMsg      ctermfg=0   ctermbg=15  cterm=bold
+call s:HL('WarningMsg', s:palette.fg, s:palette.bg , 'bold')
 "  WarningMsg      warning messages
 
 hi WildMenu        ctermfg=81  ctermbg=16
 "  WildMenu        current match in 'wildmenu' completion
 
 """ C
-hi cPreCondit         ctermfg=0               cterm=bold
-
-set background=light
+call s:HL('cPreCondit', s:palette.fg, s:palette.bg , 'bold')
