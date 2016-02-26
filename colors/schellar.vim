@@ -241,6 +241,3 @@ hi WildMenu        ctermfg=81  ctermbg=16
 
 """ C
 call s:HL('cPreCondit', s:palette.fg, s:palette.bg , 'bold')
-
-""" Python
-syn region Comment start=/"""/ end=/"""/  " docstring hack. is it too bad? probably yes.
