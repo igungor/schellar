@@ -8,11 +8,11 @@ let s:palette = {}
 if &background == "light"
     let s:palette.fg        = [0 , "#000000"]
     let s:palette.bg        = [15, "#080808"]
-    let s:palette.lightgrey = [244, "#080808"]
+    let s:palette.grey0 = [244, "#080808"]
 else
     let s:palette.fg        = [249, "#000000"]
     let s:palette.bg        = [8, "#080808"]
-    let s:palette.lightgrey = [244, "#080808"]
+    let s:palette.grey0 = [244, "#080808"]
 end
 
 " HL is a helper function to generate highlight commands based on cterm/gui
@@ -41,7 +41,7 @@ endfunction
 call s:HL('Normal', s:palette.fg, s:palette.bg , 'none')
 "  Normal          normal text
 
-call s:HL('Comment', s:palette.lightgrey, s:palette.bg , 'none')
+call s:HL('Comment', s:palette.grey0, s:palette.bg , 'none')
 " *Comment         any comment
 
 call s:HL('Constant', s:palette.fg, s:palette.bg , 'none')
@@ -160,12 +160,12 @@ call s:HL('MatchParen', s:palette.fg, s:palette.bg , 'bold')
 "  MatchParen      the character under the cursor or just before it, if it
 "                  is a paired bracket, and its match.
 
-call s:HL('ModeMsg', s:palette.fg, s:palette.bg , 'none')
+hi ModeMsg         ctermfg=0
 "  ModeMsg         'showmode' message (e.g., "-- INSERT --")
 
-call s:HL('MoreMsg', s:palette.fg, s:palette.bg , 'none')
-"  MoreMsg         |more-prompt|
-
+hi MoreMsg         ctermfg=0
+"  MoreMsg         |more-prompt| 
+"
 hi NonText         ctermfg=59
 "  NonText         '@' at the end of the window, characters from 'showbreak'
 "                  and other characters that do not really exist in the text
