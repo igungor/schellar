@@ -245,5 +245,22 @@ call s:HL('WarningMsg', s:palette.fg, s:palette.bg, 'bold')
 hi WildMenu        ctermfg=81  ctermbg=16
 "  WildMenu        current match in 'wildmenu' completion
 
+""" Statusline
+call s:HL('User1', s:palette.bg, s:palette.grey2, 'bold')
+call s:HL('User2', s:palette.grey2, s:palette.bg, 'bold')
+call s:HL('User3', s:palette.fg, s:palette.bgdark, 'none')
+call s:HL('User4', s:palette.fg, s:palette.grey3, 'none')
+call s:HL('User5', s:palette.fg, s:palette.grey3, 'none')
+call s:HL('User6', s:palette.fg, s:palette.grey3, 'none')
+call s:HL('User7', s:palette.fg, s:palette.grey3, 'none')
+call s:HL('User8', s:palette.fg, s:palette.bgdark, 'none')
+call s:HL('User9', s:palette.bgdark, s:palette.fg, 'bold')
+
 """ C
 call s:HL('cPreCondit', s:palette.fg, s:palette.bg, 'bold')
+
+""" vim-sneak
+call s:HL('SneakStreakMask', s:palette.bgdark, s:palette.bgdark, 'none')
+call s:HL('SneakStreakTarget', s:palette.fg, s:palette.bgdark, 'bold')
+call s:HL('SneakPluginTarget', s:palette.fg, s:palette.bgdark, 'bold')
+call s:HL('SneakPluginScope', s:palette.fg, s:palette.bgdark, 'bold')
