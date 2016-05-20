@@ -7,12 +7,13 @@ let g:colors_name="schellar"
 let s:palette = {}
 if &background == "light"
     let s:palette.fg = [0, "#000000"]
-    let s:palette.bg = [15, "#080808"]
-    let s:palette.grey0 = [244, "#080808"]
-    let s:palette.grey1 = [253, "#080808"]
-    let s:palette.grey2 = [11, "#080808"]
-    let s:palette.grey3 = [7, "#080808"]
-    let s:palette.bgdark = [222, "#080808"]
+    let s:palette.bg = [15, "#fdf6c3"]
+    let s:palette.grey0 = [244, "#808084"]
+    let s:palette.grey1 = [253, "#000000"]
+    let s:palette.grey2 = [11, "#000000"]
+    let s:palette.grey3 = [7, "#000000"]
+    let s:palette.grey4 = [248, "#000000"]
+    let s:palette.bgdark = [222, "#000000"]
 else
     let s:palette.fg = [249, "#000000"]
     let s:palette.bg = [8, "#080808"]
@@ -24,7 +25,7 @@ end
 function! s:HL(item, fgColor, bgColor, style, ...)
     let target = 'cterm'
     let pindex = 0
-    if has('gui_running')
+    if has('gui_running') || (has('nvim') && $NVIM_TUI_ENABLE_TRUE_COLOR)
         let target = 'gui'
         let pindex = 1
     end
@@ -147,13 +148,13 @@ hi Folded          ctermfg=67  ctermbg=16
 hi FoldColumn      ctermfg=67  ctermbg=16
 "  FoldColumn      'foldcolumn'
 
-hi SignColumn      ctermfg=118 ctermbg=235
+call s:HL('SignColumn', s:palette.bg, s:palette.bg, 'bold')
 "  SignColumn      column where |signs| are displayed
 
 hi IncSearch       ctermfg=193 ctermbg=16
 "  IncSearch       'incsearch' highlighting; also used for the text replaced with :s///c"
 
-hi LineNr          ctermfg=248
+call s:HL('LineNr', s:palette.grey4, s:palette.bg, 'none')
 "  LineNr          line number for ":number" and ":#" commands, and when 'number'
 "                  or 'relativenumber' option is set.
 
@@ -250,9 +251,9 @@ call s:HL('User1', s:palette.bg, s:palette.grey2, 'bold')
 call s:HL('User2', s:palette.grey2, s:palette.bg, 'bold')
 call s:HL('User3', s:palette.fg, s:palette.bgdark, 'none')
 call s:HL('User4', s:palette.fg, s:palette.grey3, 'none')
-call s:HL('User5', s:palette.fg, s:palette.grey3, 'none')
+call s:HL('User5', s:palette.fg, s:palette.grey1, 'none')
 call s:HL('User6', s:palette.fg, s:palette.grey3, 'none')
-call s:HL('User7', s:palette.fg, s:palette.grey3, 'none')
+call s:HL('User7', s:palette.bg, s:palette.grey2, 'none')
 call s:HL('User8', s:palette.fg, s:palette.bgdark, 'none')
 call s:HL('User9', s:palette.bgdark, s:palette.fg, 'bold')
 
