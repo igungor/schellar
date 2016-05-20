@@ -7,12 +7,15 @@ let g:colors_name="schellar"
 let s:palette = {}
 if &background == "light"
     let s:palette.fg = [0, "#000000"]
+
+
     let s:palette.bg = [15, "#fdf6c3"]
     let s:palette.grey0 = [244, "#808084"]
     let s:palette.grey1 = [253, "#000000"]
     let s:palette.grey2 = [11, "#000000"]
     let s:palette.grey3 = [7, "#000000"]
     let s:palette.grey4 = [248, "#000000"]
+    let s:palette.grey5 = [14, "#000000"]
     let s:palette.bgdark = [222, "#000000"]
 else
     let s:palette.fg = [249, "#000000"]
@@ -233,7 +236,7 @@ call s:HL('StatusLineNC', s:palette.grey2, s:palette.bg, 'none')
 call s:HL('Title', s:palette.fg, s:palette.bg, 'bold')
 "  Title           titles for output from ":set all", ":autocmd" etc.
 
-hi Visual          ctermfg=0   ctermbg=14
+call s:HL('Visual', s:palette.fg, s:palette.grey5, 'none')
 "  Visual          Visual mode selection
 
 hi VisualNOS       ctermfg=0   ctermbg=238
