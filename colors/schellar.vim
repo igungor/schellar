@@ -16,7 +16,9 @@ if &background == "light"
     let s:palette.grey3 = [7, "#000000"]
     let s:palette.grey4 = [248, "#000000"]
     let s:palette.grey5 = [14, "#000000"]
-    let s:palette.bgdark = [222, "#000000"]
+    let s:palette.yellow0 = [230, "#000000"]
+    let s:palette.yellow1 = [229, "#000000"]
+    let s:palette.yellow2 = [222, "#000000"]
 else
     let s:palette.fg = [249, "#000000"]
     let s:palette.bg = [8, "#080808"]
@@ -118,10 +120,10 @@ call s:HL('ColorColumn', s:palette.bg, s:palette.grey3, 'none')
 call s:HL('Cursor', s:palette.bg, s:palette.grey1, 'none')
 "  Cursor          the character under the cursor
 
-hi CursorColumn    ctermfg=0   ctermbg=236
+call s:HL('CursorColumn', s:palette.fg, s:palette.grey3, 'none')
 "  CursorColumn    the screen column that the cursor is in when 'cursorcolumn' is set
 
-hi CursorLine      ctermfg=255 ctermbg=12  cterm=none
+call s:HL('CursorLine', s:palette.fg, s:palette.grey3, 'none')
 "  CursorLine      the screen line that the cursor is in when 'cursorline' is set
 
 call s:HL('Directory', s:palette.fg, s:palette.bg, 'bold')
@@ -136,7 +138,7 @@ call s:HL('DiffChange', s:palette.fg, s:palette.bg, 'none')
 call s:HL('DiffDelete', s:palette.fg, s:palette.bg, 'none')
 "  DiffDelete      diff mode: Deleted line
 
-hi DiffText        ctermfg=0   ctermbg=229 cterm=none
+call s:HL('DiffText', s:palette.fg, s:palette.yellow1, 'none')
 "  DiffText        diff mode: Changed text within a changed line
 
 call s:HL('ErrorMsg', s:palette.fg, s:palette.bg, 'bold')
@@ -154,7 +156,7 @@ hi FoldColumn      ctermfg=67  ctermbg=16
 call s:HL('SignColumn', s:palette.bg, s:palette.bg, 'bold')
 "  SignColumn      column where |signs| are displayed
 
-hi IncSearch       ctermfg=193 ctermbg=16
+call s:HL('IncSearch', s:palette.fg, s:palette.yellow2, 'none')
 "  IncSearch       'incsearch' highlighting; also used for the text replaced with :s///c"
 
 call s:HL('LineNr', s:palette.grey4, s:palette.bg, 'none')
@@ -180,22 +182,22 @@ hi NonText         ctermfg=59
 "                  (e.g., ">" displayed when a double-wide character doesn't
 "                  fit at the end of the line).
 
-hi Pmenu           ctermfg=0   ctermbg=230
+call s:HL('Pmenu', s:palette.fg, s:palette.yellow0, 'none')
 "  Pmenu           popup menu: normal item.
 
-hi PmenuSel        ctermfg=229 ctermbg=0
+call s:HL('PmenuSel', s:palette.yellow0, s:palette.fg, 'none')
 "  PmenuSel        popup menu: selected item.
 
 call s:HL('PmenuSbar', s:palette.fg, s:palette.grey3, 'none')
 "  PmenuSbar       popup menu: scrollbar.
 
-call s:HL('MatchParen', s:palette.fg, s:palette.bg, 'none')
+call s:HL('PmenuThumb', s:palette.bg, s:palette.fg, 'none')
 "  PmenuThumb      popup menu: Thumb of the scrollbar.
 
 call s:HL('Question', s:palette.fg, s:palette.bg, 'bold')
 "  Question        prompt and yes/no questions
 
-call s:HL('Search', s:palette.fg, s:palette.bgdark, 'none')
+call s:HL('Search', s:palette.fg, s:palette.yellow2, 'none')
 "  Search          last search pattern highlighting
 "                  Also used for highlighting the current line in the quickfix
 "                  window and similar items that need to stand out.
@@ -239,32 +241,28 @@ call s:HL('Title', s:palette.fg, s:palette.bg, 'bold')
 call s:HL('Visual', s:palette.fg, s:palette.grey5, 'none')
 "  Visual          Visual mode selection
 
-hi VisualNOS       ctermfg=0   ctermbg=238
-"  VisualNOS       Visual mode selection when vim is "Not Owning the Selection".
-"                  Only X11 Gui's gui-x11 and xterm-clipboard supports this.
-
 call s:HL('WarningMsg', s:palette.fg, s:palette.bg, 'bold')
 "  WarningMsg      warning messages
 
-hi WildMenu        ctermfg=81  ctermbg=16
+call s:HL('WildMenu', s:palette.fg, s:palette.yellow2, 'bold')
 "  WildMenu        current match in 'wildmenu' completion
 
 """ Statusline
 call s:HL('User1', s:palette.bg, s:palette.grey2, 'bold')
 call s:HL('User2', s:palette.grey2, s:palette.bg, 'bold')
-call s:HL('User3', s:palette.fg, s:palette.bgdark, 'none')
+call s:HL('User3', s:palette.fg, s:palette.yellow2, 'none')
 call s:HL('User4', s:palette.fg, s:palette.grey3, 'none')
 call s:HL('User5', s:palette.fg, s:palette.grey1, 'none')
 call s:HL('User6', s:palette.fg, s:palette.grey3, 'none')
 call s:HL('User7', s:palette.bg, s:palette.grey2, 'none')
-call s:HL('User8', s:palette.fg, s:palette.bgdark, 'none')
-call s:HL('User9', s:palette.bgdark, s:palette.fg, 'bold')
+call s:HL('User8', s:palette.fg, s:palette.yellow2, 'none')
+call s:HL('User9', s:palette.yellow2, s:palette.fg, 'bold')
 
 """ C
 call s:HL('cPreCondit', s:palette.fg, s:palette.bg, 'bold')
 
 """ vim-sneak
-call s:HL('SneakStreakMask', s:palette.bgdark, s:palette.bgdark, 'none')
-call s:HL('SneakStreakTarget', s:palette.fg, s:palette.bgdark, 'bold')
-call s:HL('SneakPluginTarget', s:palette.fg, s:palette.bgdark, 'bold')
-call s:HL('SneakPluginScope', s:palette.fg, s:palette.bgdark, 'bold')
+call s:HL('SneakStreakMask', s:palette.yellow2, s:palette.yellow2, 'none')
+call s:HL('SneakStreakTarget', s:palette.fg, s:palette.yellow2, 'bold')
+call s:HL('SneakPluginTarget', s:palette.fg, s:palette.yellow2, 'bold')
+call s:HL('SneakPluginScope', s:palette.fg, s:palette.yellow2, 'bold')
