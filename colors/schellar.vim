@@ -156,7 +156,7 @@ hi FoldColumn      ctermfg=67  ctermbg=16
 call s:HL('SignColumn', s:palette.bg, s:palette.bg, 'bold')
 "  SignColumn      column where |signs| are displayed
 
-call s:HL('IncSearch', s:palette.fg, s:palette.yellow2, 'none')
+call s:HL('IncSearch', s:palette.fg, s:palette.yellow1, 'bold')
 "  IncSearch       'incsearch' highlighting; also used for the text replaced with :s///c"
 
 call s:HL('LineNr', s:palette.grey4, s:palette.bg, 'none')
