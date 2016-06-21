@@ -114,7 +114,7 @@ call s:HL('Todo', s:palette.bg, s:palette.grey0, 'none')
 "
 " Comments are extracted from `:help highlight-groups`
 " """"""""""""""""""""""""""""""""""""""""""""""""""""
-call s:HL('ColorColumn', s:palette.bg, s:palette.grey3, 'none')
+call s:HL('ColorColumn', s:palette.fg, s:palette.grey3, 'none')
 "  ColorColumn     used for the columns set with 'colorcolumn'
 
 call s:HL('Cursor', s:palette.bg, s:palette.grey1, 'none')
