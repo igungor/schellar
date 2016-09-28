@@ -6,16 +6,15 @@ let g:colors_name="schellar"
 
 let s:palette = {}
 if &background == "light"
-    let s:palette.fg = [0, "#000000"]
-
-
-    let s:palette.bg = [15, "#fdf6c3"]
-    let s:palette.grey0 = [244, "#808084"]
-    let s:palette.grey1 = [253, "#000000"]
-    let s:palette.grey2 = [11, "#000000"]
-    let s:palette.grey3 = [7, "#000000"]
-    let s:palette.grey4 = [248, "#000000"]
-    let s:palette.grey5 = [14, "#000000"]
+    " TODO: define gui colors as well
+    let s:palette.fg      = [0,   "#000000"]
+    let s:palette.bg      = [15,  "#fdf6c3"]
+    let s:palette.grey0   = [244, "#808084"]
+    let s:palette.grey1   = [253, "#000000"]
+    let s:palette.grey2   = [11,  "#000000"]
+    let s:palette.grey3   = [7,   "#000000"]
+    let s:palette.grey4   = [248, "#000000"]
+    let s:palette.grey5   = [14,  "#000000"]
     let s:palette.yellow0 = [230, "#000000"]
     let s:palette.yellow1 = [229, "#000000"]
     let s:palette.yellow2 = [222, "#000000"]
