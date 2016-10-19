@@ -152,7 +152,7 @@ call s:HL('Folded', s:palette.bg, s:palette.grey2, 'none')
 hi FoldColumn      ctermfg=67  ctermbg=16
 "  FoldColumn      'foldcolumn'
 
-call s:HL('SignColumn', s:palette.bg, s:palette.bg, 'bold')
+call s:HL('SignColumn', s:palette.fg, s:palette.bg, 'bold')
 "  SignColumn      column where |signs| are displayed
 
 call s:HL('IncSearch', s:palette.fg, s:palette.yellow1, 'bold')
