@@ -5,39 +5,29 @@ endif
 let g:colors_name="schellar"
 
 let s:palette = {}
-if &background == "light"
-    " TODO: define gui colors as well
-    let s:palette.fg      = [0,   "#000000"]
-    let s:palette.bg      = [15,  "#fdf6c3"]
-    let s:palette.grey0   = [244, "#808084"]
-    let s:palette.grey1   = [253, "#000000"]
-    let s:palette.grey2   = [11,  "#000000"]
-    let s:palette.grey3   = [7,   "#000000"]
-    let s:palette.grey4   = [248, "#000000"]
-    let s:palette.grey5   = [14,  "#000000"]
-    let s:palette.yellow0 = [230, "#000000"]
-    let s:palette.yellow1 = [229, "#000000"]
-    let s:palette.yellow2 = [222, "#000000"]
-else
-    let s:palette.fg = [249, "#000000"]
-    let s:palette.bg = [8, "#080808"]
-    let s:palette.grey0 = [244, "#080808"]
-end
+let s:palette.fg      = [0,   "#000000"]
+let s:palette.bg      = [15,  "#fdf6e3"]
+let s:palette.grey0   = [244, "#808084"]
+let s:palette.grey1   = [253, "#dadada"]
+let s:palette.grey2   = [11,  "#657b83"]
+let s:palette.grey3   = [7,   "#eee8d5"]
+let s:palette.grey4   = [248, "#a8a8a8"]
+let s:palette.grey5   = [14,  "#93a1a1"]
+let s:palette.yellow0 = [230, "#ffffd7"]
+let s:palette.yellow1 = [229, "#ffffaf"]
+let s:palette.yellow2 = [222, "#ffd787"]
 
 " HL is a helper function to generate highlight commands based on cterm/gui
 " etc.
 function! s:HL(item, fgColor, bgColor, style, ...)
-    let target = 'cterm'
-    let pindex = 0
-    if has('gui_running') || (has('nvim') && $NVIM_TUI_ENABLE_TRUE_COLOR)
-        let target = 'gui'
-        let pindex = 1
-    end
-
     let command  = 'hi ' . a:item
-    let command .= ' ' . target . 'fg=' . a:fgColor[pindex]
-    let command .= ' ' . target . 'bg=' . a:bgColor[pindex]
-    let command .= ' ' . target . '=' . a:style
+    let command .= ' ' . 'ctermfg=' . a:fgColor[0]
+    let command .= ' ' . 'ctermbg=' . a:bgColor[0]
+    let command .= ' ' . 'cterm=' . a:style
+
+    let command .= ' ' . 'guifg=' . a:fgColor[1]
+    let command .= ' ' . 'guibg=' . a:bgColor[1]
+    let command .= ' ' . 'gui=' . a:style
 
     execute command
 endfunction
@@ -254,7 +244,7 @@ call s:HL('User4', s:palette.fg, s:palette.grey3, 'none')
 call s:HL('User5', s:palette.fg, s:palette.grey1, 'none')
 call s:HL('User6', s:palette.fg, s:palette.grey3, 'none')
 call s:HL('User7', s:palette.bg, s:palette.grey2, 'none')
-call s:HL('User8', s:palette.fg, s:palette.yellow2, 'none')
+call s:HL('User8', s:palette.fg, s:palette.yellow2, 'bold')
 call s:HL('User9', s:palette.yellow2, s:palette.fg, 'bold')
 
 """ C
