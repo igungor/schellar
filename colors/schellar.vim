@@ -219,7 +219,7 @@ call s:HL('SpellRare', s:palette.fg, s:palette.bg, 'italic')
 call s:HL('StatusLine', s:palette.grey2, s:palette.bg, 'none')
 "  StatusLine      status line of current window
 
-call s:HL('StatusLineNC', s:palette.grey2, s:palette.bg, 'none')
+call s:HL('StatusLineNC', s:palette.grey3, s:palette.bg, 'none')
 "  StatusLineNC    status lines of not-current windows
 "                  Note: if this is equal to "StatusLine" Vim will use "^^^" in
 "                  the status line of the current window.
