@@ -223,6 +223,15 @@ call s:HL('StatusLineNC', s:palette.grey3, s:palette.bg, 'none')
 "  StatusLineNC    status lines of not-current windows
 "                  Note: if this is equal to "StatusLine" Vim will use "^^^" in
 "                  the status line of the current window.
+"
+call s:HL('TabLine', s:palette.bg, s:palette.grey2, 'none')
+"  TabLine         tab pages line, not active tab page label
+
+call s:HL('TabLineFill', s:palette.fg, s:palette.grey2, 'none')
+"  TabLineFill     tab pages line, where there are no labels
+
+call s:HL('TabLineSel', s:palette.fg, s:palette.bg, 'bold')
+"  TabLineSel      tab pages line, active tab page label
 
 call s:HL('Title', s:palette.fg, s:palette.bg, 'bold')
 "  Title           titles for output from ":set all", ":autocmd" etc.
