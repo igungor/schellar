@@ -236,7 +236,7 @@ call s:HL('TabLineSel', s:palette.fg, s:palette.bg, 'bold')
 call s:HL('Title', s:palette.fg, s:palette.bg, 'bold')
 "  Title           titles for output from ":set all", ":autocmd" etc.
 
-call s:HL('Visual', s:palette.fg, s:palette.grey5, 'none')
+call s:HL('Visual', s:palette.fg, s:palette.yellow1, 'none')
 "  Visual          Visual mode selection
 
 call s:HL('WarningMsg', s:palette.fg, s:palette.bg, 'bold')
