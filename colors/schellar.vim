@@ -197,21 +197,20 @@ call s:HL('SpecialKey', s:palette.fg, s:palette.bg, 'none')
 "                  Generally: text that is displayed differently from what it
 "                  really is.
 
-" TODO(ig): assign proper colorcodes to spell group.
-call s:HL('SpellBad', s:palette.fg, s:palette.bg, 'italic')
+call s:HL('SpellBad', s:palette.fg, s:palette.yellow0, 'underline')
 "  SpellBad        Word that is not recognized by the spellchecker.
 "                  This will be combined with the highlighting used otherwise.
 
-call s:HL('SpellCap', s:palette.fg, s:palette.bg, 'italic')
+call s:HL('SpellCap', s:palette.fg, s:palette.yellow0, 'underline')
 " SpellCap         Word that should start with a capital.
 "                  This will be combined with the highlighting used otherwise.
 
-call s:HL('SpellLocal', s:palette.fg, s:palette.bg, 'italic')
+call s:HL('SpellLocal', s:palette.fg, s:palette.yellow0, 'underline')
 "  SpellLocal      Word that is recognized by the spellchecker as one that is
 "                  used in another region. This will be combined with the
 "                  highlighting used otherwise.
 
-call s:HL('SpellRare', s:palette.fg, s:palette.bg, 'italic')
+call s:HL('SpellRare', s:palette.fg, s:palette.yellow0, 'underline')
 "  SpellRare       Word that is recognized by the spellchecker as one that is
 "                  hardly ever used. This will be combined with the
 "                  highlighting used otherwise.
